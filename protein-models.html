@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical project note on efficient protein language models and RISC-V acceleration.">
+  <title>Protein language models on RISC-V — Aayush Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic%7CRaleway:200,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css"><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/aayush.css">
+</head>
+<body>
+  <div class="container wrapper project-note">
+    <header class="header">
+      <h1 class="site-title"><a href="index.html">Aayush Shah</a></h1>
+      <div class="site-description"><h2>ML engineer working on real-time multimodal systems.</h2></div>
+      <nav class="nav" aria-label="Main navigation"><ul class="flat"><li><a href="index.html">Home</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="research.html">Research</a></li><li><a href="notes.html">Notes</a></li><li><a href="index.html#experience">About</a></li></ul></nav>
+    </header>
+    <main class="post">
+      <header class="post-header">
+        <div class="project-kicker">02 · ESPERANTO TECHNOLOGIES · 2024</div>
+        <h1 class="title">Protein language models on RISC-V</h1>
+        <p class="project-lede">An exploration of parameter-efficient training and energy-efficient inference for biological foundation models.</p>
+      </header>
+
+      <dl class="project-facts">
+        <div><dt>Throughput / watt</dt><dd>3.3×</dd></div>
+        <div><dt>Training time</dt><dd>−70%</dd></div>
+        <div><dt>Venue</dt><dd>AAAI ’25</dd></div>
+      </dl>
+
+      <figure class="project-hero-figure">
+        <img src="assets/protein-benchmark.svg" alt="Normalized charts showing throughput-per-watt and training-time improvements for protein language models.">
+        <figcaption>Fig. 02 — normalized hardware-efficiency and training-time results.</figcaption>
+      </figure>
+
+      <section class="project-section">
+        <h2>Why this project</h2>
+        <p>Protein language models are useful precisely where compute can become expensive: long sequences, large encoders, and structure-prediction pipelines. I wanted to understand how much of that workload could move onto a power-efficient RISC-V accelerator without treating the model or the hardware as a black box.</p>
+      </section>
+
+      <section class="project-section">
+        <h2>Approach</h2>
+        <ul>
+          <li>Adapted biological foundation models using LoRA instead of full fine-tuning.</li>
+          <li>Used multi-GPU distributed data parallel training to shorten experiment cycles.</li>
+          <li>Exported and profiled models through PyTorch and ONNX for accelerator deployment.</li>
+          <li>Evaluated both learned protein representations and ESMFold structure predictions.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Results</h2>
+        <p>For the measured Phi-3 workload, the RISC-V system produced 3.3× higher throughput per watt than the A100 baseline. LoRA together with distributed training reduced training time by roughly 70%. The structure-prediction evaluation reached a pLDDT of 69.75 and a TM-score of 0.81.</p>
+      </section>
+
+      <section class="project-section">
+        <h2>What I learned</h2>
+        <p>“Efficient model” and “efficient hardware” cannot be evaluated independently. Operator support, export constraints, precision, memory movement, and the shape of the workload decide whether a theoretical advantage survives deployment.</p>
+      </section>
+
+      <p><a href="research.html">Research entry</a> · <a href="index.html#projects">Back to projects</a></p>
+    </main>
+  </div>
+  <footer class="footer wrapper"><nav class="nav"><div>© 2026 Aayush Shah · Based on the <a href="https://github.com/vividvilla/ezhil">Ezhil</a> theme.</div></nav></footer>
+</body>
+</html>

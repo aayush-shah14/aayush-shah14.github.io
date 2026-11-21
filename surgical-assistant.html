@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical project note on a real-time multimodal surgical assistant.">
+  <title>Real-time surgical assistant — Aayush Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic%7CRaleway:200,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css"><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/aayush.css">
+</head>
+<body>
+  <div class="container wrapper project-note">
+    <header class="header">
+      <h1 class="site-title"><a href="index.html">Aayush Shah</a></h1>
+      <div class="site-description"><h2>ML engineer working on real-time multimodal systems.</h2></div>
+      <nav class="nav" aria-label="Main navigation"><ul class="flat"><li><a href="index.html">Home</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="research.html">Research</a></li><li><a href="notes.html">Notes</a></li><li><a href="index.html#experience">About</a></li></ul></nav>
+    </header>
+    <main class="post">
+      <header class="post-header">
+        <div class="project-kicker">01 · KALIBER LABS · 2025—</div>
+        <h1 class="title">Real-time surgical assistant</h1>
+        <p class="project-lede">A multimodal assistant that combines live arthroscope video, voice, patient context, and surgical technique knowledge on a two-GPU edge system.</p>
+      </header>
+
+      <dl class="project-facts">
+        <div><dt>End of speech → audio</dt><dd>1.31 s</dd></div>
+        <div><dt>Dry-lab success</dt><dd>95%</dd></div>
+        <div><dt>Workflows</dt><dd>12</dd></div>
+      </dl>
+
+      <figure class="project-hero-figure">
+        <img src="assets/surgical-system.svg" alt="System diagram for a surgical assistant combining live inputs, orchestration, edge inference, and visual and voice responses.">
+        <figcaption>Fig. 01 — simplified public view of the system and local voice-latency path.</figcaption>
+      </figure>
+
+      <section class="project-section">
+        <h2>The problem</h2>
+        <p>A useful assistant in the operating room cannot behave like a conventional chatbot. It has to understand what is happening in the video stream, preserve procedure and patient context, respond quickly to voice, and fail safely when the available evidence is incomplete.</p>
+      </section>
+
+      <section class="project-section">
+        <h2>What I worked on</h2>
+        <ul>
+          <li>The multi-agent runtime and the path from live context to tool calls and responses.</li>
+          <li>A local voice stack with streaming ASR, LLM generation, and TTS.</li>
+          <li>Inference deployment across two edge GPUs, including vLLM, ONNX, Triton, and gRPC streaming.</li>
+          <li>Validation, human-in-the-loop safeguards, and traces for diagnosing context and tool failures.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2 id="latency">Latency work</h2>
+        <p>The first useful measurement was not total request time; it was the delay a surgeon actually feels between finishing a question and hearing the first audio. In a local deployment, the main components measured roughly 0.25 seconds for speech recognition, 0.52 seconds for the LLM round trip, and 0.55 seconds for TTS startup, producing 1.31 seconds end to end.</p>
+        <p>Prefix caching, streaming generation, and starting audio before the response was complete mattered more than optimizing a single isolated model call.</p>
+      </section>
+
+      <section class="project-section">
+        <h2>What changed</h2>
+        <p>The system supported twelve arthroscopic workflows and reached 95% task success across twenty dry-lab sessions. The work also made failures easier to inspect: a bad answer could be traced back to context selection, perception, tool execution, or generation rather than appearing as one opaque model error.</p>
+      </section>
+
+      <aside class="confidential-note">This page intentionally omits product UI, customer data, model prompts, and proprietary workflow details. The diagram is a simplified reconstruction using information suitable for a public portfolio.</aside>
+
+      <p><a href="index.html#projects">← Back to projects</a></p>
+    </main>
+  </div>
+  <footer class="footer wrapper"><nav class="nav"><div>© 2026 Aayush Shah · Based on the <a href="https://github.com/vividvilla/ezhil">Ezhil</a> theme.</div></nav></footer>
+</body>
+</html>

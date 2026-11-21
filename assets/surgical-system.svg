@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+  <title id="title">Real-time surgical assistant system diagram</title>
+  <desc id="desc">Live video, voice and patient context flow through an orchestration layer to edge inference, producing a visual overlay and spoken response. End of speech to first audio is 1.31 seconds.</desc>
+  <rect width="760" height="420" fill="#e8effa"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+    <text x="34" y="40" font-size="13" fill="#525951">FIG. 01 / SYSTEM SKETCH</text>
+    <text x="34" y="70" font-family="Ubuntu, Arial, sans-serif" font-size="20" fill="#272c29">Surgical assistant at the edge</text>
+
+    <g font-size="12" text-anchor="middle">
+      <rect x="34" y="112" width="120" height="56" rx="3" fill="#f6f9fa" stroke="#8da5b2"/>
+      <text x="94" y="136" fill="#272c29">arthroscope</text><text x="94" y="153" fill="#525951">live video</text>
+      <rect x="34" y="184" width="120" height="56" rx="3" fill="#f6f9fa" stroke="#8da5b2"/>
+      <text x="94" y="208" fill="#272c29">surgeon</text><text x="94" y="225" fill="#525951">voice</text>
+      <rect x="34" y="256" width="120" height="56" rx="3" fill="#f6f9fa" stroke="#8da5b2"/>
+      <text x="94" y="280" fill="#272c29">patient + guide</text><text x="94" y="297" fill="#525951">context</text>
+
+      <path d="M154 140 H214 M154 212 H214 M154 284 H214" stroke="#d35a34" stroke-width="1.5"/>
+      <path d="M206 135 l8 5 -8 5 M206 207 l8 5 -8 5 M206 279 l8 5 -8 5" fill="none" stroke="#d35a34" stroke-width="1.5"/>
+
+      <rect x="214" y="142" width="150" height="128" rx="4" fill="#dbe7ee" stroke="#6e91b9"/>
+      <text x="289" y="192" font-family="Ubuntu, Arial, sans-serif" font-size="15" fill="#272c29">agent runtime</text>
+      <text x="289" y="215" fill="#58708d">context · tools</text>
+      <text x="289" y="233" fill="#58708d">validation · trace</text>
+
+      <path d="M364 206 H422" stroke="#d35a34" stroke-width="1.5"/><path d="M414 201 l8 5 -8 5" fill="none" stroke="#d35a34" stroke-width="1.5"/>
+      <rect x="422" y="142" width="132" height="128" rx="4" fill="#315da9"/>
+      <text x="488" y="192" font-family="Ubuntu, Arial, sans-serif" font-size="15" fill="#f6f9fa">edge inference</text>
+      <text x="488" y="215" fill="#dcecff">CV · LLM</text>
+      <text x="488" y="233" fill="#dcecff">ASR · TTS</text>
+
+      <path d="M554 174 H610 M554 238 H610" stroke="#d35a34" stroke-width="1.5"/><path d="M602 169 l8 5 -8 5 M602 233 l8 5 -8 5" fill="none" stroke="#d35a34" stroke-width="1.5"/>
+      <rect x="610" y="146" width="116" height="56" rx="3" fill="#f6f9fa" stroke="#8da5b2"/><text x="668" y="171" fill="#272c29">visual</text><text x="668" y="188" fill="#525951">guidance</text>
+      <rect x="610" y="218" width="116" height="56" rx="3" fill="#f6f9fa" stroke="#8da5b2"/><text x="668" y="243" fill="#272c29">spoken</text><text x="668" y="260" fill="#525951">response</text>
+    </g>
+
+    <line x1="34" y1="344" x2="726" y2="344" stroke="#9bb7d6"/>
+    <text x="34" y="373" font-size="12" fill="#525951">END OF SPEECH</text>
+    <rect x="164" y="359" width="120" height="22" fill="#ff9c66"/><text x="174" y="375" font-size="11" fill="#fff">ASR 0.25s</text>
+    <rect x="284" y="359" width="246" height="22" fill="#d35a34"/><text x="294" y="375" font-size="11" fill="#fff">LLM 0.52s</text>
+    <rect x="530" y="359" width="162" height="22" fill="#315da9"/><text x="540" y="375" font-size="11" fill="#fff">TTS startup 0.55s</text>
+    <text x="726" y="405" text-anchor="end" font-size="13" fill="#272c29">FIRST AUDIO · 1.31s</text>
+  </g>
+</svg>

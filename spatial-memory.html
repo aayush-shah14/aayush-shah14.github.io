@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical project note on open-vocabulary 3D mapping and CUDA acceleration.">
+  <title>Open-vocabulary spatial memory — Aayush Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic%7CRaleway:200,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css"><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/aayush.css">
+</head>
+<body>
+  <div class="container wrapper project-note">
+    <header class="header">
+      <h1 class="site-title"><a href="index.html">Aayush Shah</a></h1>
+      <div class="site-description"><h2>ML engineer working on real-time multimodal systems.</h2></div>
+      <nav class="nav" aria-label="Main navigation"><ul class="flat"><li><a href="index.html">Home</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="research.html">Research</a></li><li><a href="notes.html">Notes</a></li><li><a href="index.html#experience">About</a></li></ul></nav>
+    </header>
+    <main class="post">
+      <header class="post-header">
+        <div class="project-kicker">03 · COMPUTER VISION + CUDA · 2025</div>
+        <h1 class="title">Open-vocabulary spatial memory</h1>
+        <p class="project-lede">A persistent 3D map that associates detections and semantic embeddings across frames, accelerated with a custom CUDA kernel.</p>
+      </header>
+
+      <dl class="project-facts">
+        <div><dt>1K observations</dt><dd>2.45×</dd></div>
+        <div><dt>20K observations</dt><dd>2.06×</dd></div>
+        <div><dt>Representation</dt><dd>Open vocab.</dd></div>
+      </dl>
+
+      <figure class="project-hero-figure">
+        <img src="assets/spatial-memory.svg" alt="Diagram showing semantic observations being associated across frames into a fused 3D map, with CUDA speedups.">
+        <figcaption>Fig. 03 — semantic association, multi-frame fusion, and measured kernel speedup.</figcaption>
+      </figure>
+
+      <section class="project-section">
+        <h2>The idea</h2>
+        <p>An agent acting in a physical space needs more than the latest camera frame. It needs a memory that says what has been observed, where it was, and whether a new detection refers to the same object seen earlier.</p>
+      </section>
+
+      <section class="project-section">
+        <h2>Pipeline</h2>
+        <ul>
+          <li>Run open-vocabulary detection and retain semantic embeddings for each observation.</li>
+          <li>Project detections into a shared 3D coordinate frame.</li>
+          <li>Associate new observations with existing map entities using spatial and semantic similarity.</li>
+          <li>Fuse evidence across time while retaining open-vocabulary labels.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>The bottleneck</h2>
+        <p>Association becomes increasingly expensive as both the incoming observation set and the persistent map grow. The operation was structured enough to parallelize, but the naive implementation spent too much time moving and comparing data.</p>
+        <p>I implemented the temporal 3D association step in CUDA and organized the computation around batched comparisons and reductions. The kernel produced a 2.45× speedup at one thousand observations and remained 2.06× faster at twenty thousand.</p>
+      </section>
+
+      <section class="project-section">
+        <h2>Why it matters</h2>
+        <p>The useful output is not only a faster kernel. It is a map that can become context for downstream agents: “the drill was last seen on the left tray” is a more durable representation than a detection tied to one frame.</p>
+      </section>
+
+      <p><a href="index.html#projects">← Back to projects</a></p>
+    </main>
+  </div>
+  <footer class="footer wrapper"><nav class="nav"><div>© 2026 Aayush Shah · Based on the <a href="https://github.com/vividvilla/ezhil">Ezhil</a> theme.</div></nav></footer>
+</body>
+</html>

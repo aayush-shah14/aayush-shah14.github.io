@@ -1,1 +1,46 @@
-Hello World
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Aayush Shah’s projects, research, notes, and music.">
+<title>Aayush Shah</title>
+<link rel="stylesheet" href="css/home.css"><script defer src="gear.js"></script>
+</head>
+<body>
+<header class="top shell">
+<a class="gear-home" href="#about" aria-label="Back to introduction"><svg class="gear" viewBox="0 0 80 80" aria-hidden="true">
+<polygon points="71.2,32.9 71.7,35.6 77.9,36.8 77.9,42.6 71.7,44.2 71.2,47.1 70.5,49.8 75.5,53.5 73.1,58.8 66.8,57.5 65.0,60.0 63.2,62.0 66.1,67.6 61.6,71.2 56.5,67.4 53.9,68.8 51.4,69.9 51.6,76.2 45.9,77.5 43.0,71.9 40.0,72.0 37.3,71.9 34.7,77.6 29.1,76.4 28.9,70.0 26.1,68.8 23.7,67.5 18.9,71.6 14.4,68.0 17.0,62.2 15.0,60.0 13.4,57.7 7.3,59.3 4.7,54.1 9.6,50.0 8.8,47.1 8.3,44.4 2.1,43.2 2.1,37.4 8.3,35.8 8.8,32.9 9.5,30.2 4.5,26.5 6.9,21.2 13.2,22.5 15.0,20.0 16.8,18.0 13.9,12.4 18.4,8.8 23.5,12.6 26.1,11.2 28.6,10.1 28.4,3.8 34.1,2.5 37.0,8.1 40.0,8.0 42.7,8.1 45.3,2.4 50.9,3.6 51.1,10.0 53.9,11.2 56.3,12.5 61.1,8.4 65.6,12.0 63.0,17.8 65.0,20.0 66.6,22.3 72.7,20.7 75.3,25.9 70.4,30.0" fill="#314858" stroke="#192f3b" stroke-linejoin="round"/>
+<circle cx="40" cy="40" r="27" fill="none" stroke="#b8c8ce" stroke-width="1.3"/>
+<g fill="#fbfcfd"><path transform="rotate(0 40 40)" d="M25 29 Q28 22 36 20 L38 28 Q33 29 30 34 Z"/><path transform="rotate(120 40 40)" d="M25 29 Q28 22 36 20 L38 28 Q33 29 30 34 Z"/><path transform="rotate(240 40 40)" d="M25 29 Q28 22 36 20 L38 28 Q33 29 30 34 Z"/></g>
+<circle cx="40" cy="40" r="10" fill="#cad7db"/><path d="M35 36h3v-3h4v3h3v9H35Z" fill="#243d4c"/>
+<path d="M59 24l4-4" stroke="#ff9868" stroke-width="4"/></svg></a>
+<nav aria-label="Sections"><a href="#projects">Projects</a><a href="#notes">Notes</a><a href="#music">Music</a></nav>
+<div class="social"><a href="https://github.com/aayush-shah14">GitHub ↗</a><a href="https://www.linkedin.com/in/aayush-shah14">LinkedIn ↗</a><a href="https://scholar.google.com/scholar?q=author%3A%22Aayush+Shah%22+protein+OR+peptide">Google Scholar ↗</a></div></header>
+<main class="shell">
+<section id="about" class="hero">
+<img class="portrait" src="assets/aayush-shah.jpg" width="566" height="547" alt="Aayush Shah">
+<div class="intro">
+<h1>Aayush Shah</h1>
+<p>I’m an ML engineer in Mountain View. At Kaliber Labs, I work on an assistant that can see and hear what’s happening during surgery.</p>
+<p>I came to this through mechanical engineering at IIT Bombay, AI at Carnegie Mellon, and protein language models at Esperanto. <a href="#experience">More about me</a></p></div>
+</section>
+<section id="projects"><div class="sect"><h2>Selected projects</h2></div>
+<div class="projects">
+<article><a href="protein-models.html" class="plate"><img src="assets/protein-benchmark.svg" alt="Benchmark comparing throughput per watt on two accelerators"></a><small>Esperanto Technologies / Research</small><h3><a href="protein-models.html">Protein models on RISC-V</a></h3><p>What happens to energy use when you run a language model on a different chip?</p></article>
+<article><a href="surgical-assistant.html" class="plate"><img src="assets/surgical-system.svg" alt="Diagram tracing voice and video through the surgical assistant"></a><small>Kaliber Labs / Systems</small><h3><a href="surgical-assistant.html">A voice in the operating room</a></h3><p>Following a question from the end of a surgeon’s sentence to the first sound of a reply.</p></article>
+<article><a href="spatial-memory.html" class="plate"><img src="assets/spatial-memory.svg" alt="Diagram of observations from multiple frames and association speedups"></a><small>Computer vision / CUDA</small><h3><a href="spatial-memory.html">Remembering a scene in 3D</a></h3><p>Keeping track of an object as the camera moves and it slips out of view.</p></article>
+<article><div class="plate robotics-result"><strong>80%</strong><span>pick-and-place success</span></div><small>Robotics / Policy evaluation</small><h3>Teaching a robot arm to pick things up</h3><p>I collected demonstrations and tested a vision-language-action policy on a 7-DoF Aloha arm.</p></article>
+</div></section>
+<section id="experience" aria-labelledby="experience-heading">
+<div class="sect"><h2 id="experience-heading">Experience</h2></div>
+<ol class="experience-list">
+  <li><span class="years">2025–present</span><div><h3>Kaliber Labs</h3><p>Machine learning engineer building voice and vision systems for surgery.</p></div></li>
+  <li><span class="years">2024</span><div><h3>Esperanto Technologies</h3><p>Machine learning intern studying how efficiently protein models run on RISC-V.</p></div></li>
+  <li><span class="years">2023–2024</span><div><h3>Carnegie Mellon University</h3><p>M.S. in AI Engineering, with a focus on mechanical engineering.</p></div></li>
+  <li><span class="years">2019–2023</span><div><h3>IIT Bombay</h3><p>B.Tech. in mechanical engineering with a minor in computer science and data science.</p></div></li>
+</ol></section>
+<section id="notes"><div class="sect"><h2>From the notebook</h2><a href="notes.html">All notes ↗</a></div>
+<a class="row" href="https://medium.com/@EsperantoTech/evaluating-protein-language-modeling-on-et-soc-1-5753d7a45cb5"><span>Technical article</span><strong>Evaluating protein language modeling on ET-SoC-1</strong><b>↗</b></a>
+<a class="row" href="surgical-assistant.html#latency"><span>Project note</span><strong>What makes a voice agent feel fast?</strong><b>↗</b></a></section>
+<section id="music"><div class="sect"><h2>Music</h2></div><div class="music"><div class="record" aria-hidden="true"></div><div><small>Player demo / synthesized audio</small><h3>A little sound check</h3><p>A short sequence of plucked notes to try the player.</p><audio controls preload="metadata" src="assets/sound-check.wav">Your browser cannot play this audio.</audio></div></div></section>
+</main><footer class="shell"><span>Aayush Shah</span><a href="#about">Back to top ↑</a></footer></body></html>
