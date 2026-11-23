@@ -11,15 +11,11 @@
 </head>
 <body>
   <div class="container wrapper project-note">
-    <header class="header">
-      <h1 class="site-title"><a href="index.html">Aayush Shah</a></h1>
-      <div class="site-description"><h2>ML engineer working on real-time multimodal systems.</h2></div>
-      <nav class="nav" aria-label="Main navigation"><ul class="flat"><li><a href="index.html">Home</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="research.html">Research</a></li><li><a href="notes.html">Notes</a></li><li><a href="index.html#experience">About</a></li></ul></nav>
-    </header>
+    <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> Go back</a>
     <main class="post">
       <header class="post-header">
-        <div class="project-kicker">02 · ESPERANTO TECHNOLOGIES · 2024</div>
-        <h1 class="title">Protein language models on RISC-V</h1>
+        <h1 class="title">Protein language models on <span class="nowrap">RISC-V</span></h1>
+        <p class="project-links"><a href="https://medium.com/@EsperantoTech/evaluating-protein-language-modeling-on-et-soc-1-5753d7a45cb5">Esperanto article</a> · <a href="https://huggingface.co/Esperanto/Protein-Phi-3-mini">Phi-3 model on Hugging Face</a></p>
         <p class="project-lede">An exploration of parameter-efficient training and energy-efficient inference for biological foundation models.</p>
       </header>
 
@@ -31,7 +27,7 @@
 
       <figure class="project-hero-figure">
         <img src="assets/protein-benchmark.svg" alt="Normalized charts showing throughput-per-watt and training-time improvements for protein language models.">
-        <figcaption>Fig. 02 — normalized hardware-efficiency and training-time results.</figcaption>
+        <figcaption>Relative throughput per watt on Phi-3 and training time for Llama 3.</figcaption>
       </figure>
 
       <section class="project-section">
@@ -41,6 +37,10 @@
 
       <section class="project-section">
         <h2>Approach</h2>
+        <figure class="project-hero-figure pipeline">
+          <img src="assets/training-pipeline.png" width="981" height="900" alt="Two stages of training for Llama 3 and Phi-3, with LoRA adapters.">
+          <figcaption>Training pipeline from <a href="https://medium.com/@EsperantoTech/evaluating-protein-language-modeling-on-et-soc-1-5753d7a45cb5">our Esperanto article</a>.</figcaption>
+        </figure>
         <ul>
           <li>Adapted biological foundation models using LoRA instead of full fine-tuning.</li>
           <li>Used multi-GPU distributed data parallel training to shorten experiment cycles.</li>
@@ -59,7 +59,7 @@
         <p>“Efficient model” and “efficient hardware” cannot be evaluated independently. Operator support, export constraints, precision, memory movement, and the shape of the workload decide whether a theoretical advantage survives deployment.</p>
       </section>
 
-      <p><a href="research.html">Research entry</a> · <a href="index.html#projects">Back to projects</a></p>
+
     </main>
   </div>
   <footer class="footer wrapper"><nav class="nav"><div>© 2026 Aayush Shah · Based on the <a href="https://github.com/vividvilla/ezhil">Ezhil</a> theme.</div></nav></footer>

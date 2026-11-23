@@ -1,0 +1,21 @@
+.recital {padding:30px 0 64px}
+.back {font-size:15px;text-decoration:none}
+.back:hover {text-decoration:underline}
+.recital header {margin:34px 0 26px}
+.recital h1 {margin:0;font:normal clamp(38px,6vw,56px)/1.08 Georgia,serif;letter-spacing:-.045em}
+.recital .lede,.composer,.repertoire p,.pending {color:#4e5b65}
+.recital .lede {margin:8px 0 0}
+.repertoire {margin:0;padding:0;list-style:none;border-bottom:1px solid var(--line)}
+.repertoire li {border-top:1px solid var(--line)}
+.repertoire a {display:flex;align-items:center;gap:clamp(18px,4vw,32px);padding:18px 0;text-decoration:none;color:var(--ink)}
+.repertoire a:hover h2 {color:var(--blue);text-decoration:underline;text-decoration-thickness:1px}
+.repertoire img {width:clamp(84px,25%,172px);aspect-ratio:1.55;object-fit:cover}
+.repertoire h2 {font-size:clamp(24px,4vw,32px)}
+.repertoire p {margin:6px 0 0;font-size:15px}
+.composer {margin:0 0 8px}
+.piece-art {display:block;width:100%;height:clamp(160px,37vw,300px);object-fit:cover}
+.listening-note {max-width:66ch;margin:26px 0}
+.recording {border-top:1px solid var(--line);padding-top:18px}
+.recording h2 {font-size:26px}
+.pending {margin:8px 0}
+.recording audio[hidden],.pending[hidden] {display:none}

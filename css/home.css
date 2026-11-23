@@ -13,7 +13,7 @@ a:focus-visible,audio:focus-visible {outline:3px solid var(--blue);outline-offse
 .top nav a,.social a,.sect a,small,footer,.row span {font:12px/1.5 var(--mono)}
 .hero {display:grid;grid-template-columns:148px minmax(0,1fr);align-items:start;gap:32px;padding:44px 0}
 .hero h1 {font:normal clamp(36px,4.3vw,56px)/1 Georgia,serif;letter-spacing:-.055em;margin:0 0 16px}
-.intro p {max-width:60ch;margin:0 0 12px}.intro p:last-child {font-size:14px;color:#4d5963;margin-bottom:0}
+.intro p {max-width:60ch;margin:0 0 12px}.intro p:last-child {margin-bottom:0}
 .intro a {white-space:nowrap}
 .sect {justify-content:space-between;border-top:1px solid var(--ink);padding:18px 0 22px}
 h2,h3,.row strong {font:normal 34px/1.12 Georgia,serif;letter-spacing:-.045em;margin:0}
@@ -23,7 +23,7 @@ h3 {font-size:27px;line-height:1.13}h3 a {color:inherit}
 .projects article {display:grid;grid-template-columns:176px minmax(0,1fr);column-gap:24px;align-content:center;padding:18px 0}
 .projects article:first-child {padding-top:0}
 .projects article + article {border-top:1px solid var(--line)}
-.projects .plate {grid-row:1 / span 3;margin:0;align-self:center}
+.projects .plate {grid-row:1 / span 2;margin:0;align-self:center}
 .projects article small {margin-bottom:4px}
 .projects article h3 {font-size:25px}
 .projects article p {margin:5px 0 0;line-height:1.5}
@@ -59,23 +59,12 @@ audio {display:block;margin-top:14px;width:min(370px,100%)}footer {border-top:1p
 .gear {width:50px;display:block;transform:rotate(var(--turn,0deg))}
 .top nav a {color:var(--ink)}
 .intro p {font-size:16px;line-height:1.57}
-.intro p:last-child {line-height:1.63}
+
 ::selection {background:#c8e6dc;color:#192832}
 @media(max-width:720px){.gear-home{width:34px;height:34px}.gear{width:32px}.top{gap:10px;min-height:58px}.intro p{max-width:57ch}}
 @media(max-width:410px){.top nav,.social{gap:8px}.shell{width:92%}}
 @media(prefers-reduced-motion:reduce){.gear{transform:none}}
 
-.projects .robotics-result {
-  aspect-ratio: 2 / 1;
-  display: grid;
-  align-content: center;
-  justify-items: center;
-  text-align: center;
-  color: #264b44;
-  background: #eaf2ee;
-}
-.robotics-result strong {font: normal clamp(22px, 4vw, 34px)/1 Georgia, serif}
-.robotics-result span {font: 12px/1.35 var(--mono); padding: 3px 5px}
 .experience-list {list-style: none; padding: 0; margin: 0}
 .experience-list li {
   display: grid;
@@ -102,3 +91,12 @@ audio {display:block;margin-top:14px;width:min(370px,100%)}footer {border-top:1p
   .social {margin-left: 0}
   .top nav, .social {gap: 14px}
 }
+
+.papers {list-style:none;margin:0;padding:0}
+.papers li {padding:16px 0;border-bottom:1px solid var(--line)}
+.papers li:first-child {padding-top:0}
+.papers li:last-child {border-bottom:0}
+.papers a {font:normal 21px/1.32 Georgia,serif;text-decoration-thickness:1px}
+.papers p {margin:6px 0 0;color:#4d5963;font-size:14px}
+
+.papers .code-link {font:inherit}

@@ -2,12 +2,12 @@
   <title id="title">Open-vocabulary 3D mapping and CUDA speedup</title>
   <desc id="desc">Multi-frame semantic detections are associated into a fused spatial map. The CUDA association kernel achieved 2.45 times speedup at one thousand observations and 2.06 times at twenty thousand.</desc>
   <rect width="760" height="420" fill="#f9eee8"/>
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
-    <text x="34" y="40" font-size="13" fill="#525951">FIG. 03 / MAPPING PIPELINE</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="34" y="40" font-size="13" fill="#525951">Mapping pipeline</text>
     <text x="34" y="70" font-family="Ubuntu, Arial, sans-serif" font-size="20" fill="#272c29">Semantic observations → spatial memory</text>
 
     <rect x="34" y="105" width="260" height="220" rx="4" fill="#fbf6f1" stroke="#c6a69a"/>
-    <text x="52" y="132" font-size="11" fill="#525951">MULTI-FRAME OBSERVATIONS</text>
+    <text x="52" y="132" font-size="11" fill="#525951">Multi-frame observations</text>
     <g opacity=".8">
       <circle cx="82" cy="183" r="5" fill="#bd452d"/><circle cx="107" cy="214" r="4" fill="#256778"/><circle cx="143" cy="176" r="4" fill="#bd452d"/>
       <circle cx="164" cy="238" r="5" fill="#256778"/><circle cx="204" cy="196" r="4" fill="#bd452d"/><circle cx="238" cy="248" r="5" fill="#256778"/>
@@ -19,21 +19,21 @@
 
     <path d="M306 215 H376" stroke="#bd452d" stroke-width="1.5"/><path d="M368 210 l8 5 -8 5" fill="none" stroke="#bd452d" stroke-width="1.5"/>
     <text x="341" y="198" text-anchor="middle" font-size="10" fill="#525951">CUDA</text>
-    <text x="341" y="239" text-anchor="middle" font-size="10" fill="#525951">ASSOCIATE</text>
+    <text x="341" y="239" text-anchor="middle" font-size="10" fill="#525951">Associate</text>
 
     <rect x="388" y="105" width="338" height="220" rx="4" fill="#f1dcd2" stroke="#c6a69a"/>
-    <text x="406" y="132" font-size="11" fill="#525951">FUSED MAP / KERNEL SPEEDUP</text>
+    <text x="406" y="132" font-size="11" fill="#525951">Fused map / kernel speedup</text>
     <line x1="430" y1="282" x2="690" y2="282" stroke="#c6a69a"/><line x1="430" y1="158" x2="430" y2="282" stroke="#c6a69a"/>
     <path d="M452 176 C510 192 568 206 672 224" fill="none" stroke="#bd452d" stroke-width="3"/>
     <circle cx="452" cy="176" r="5" fill="#bd452d"/><circle cx="672" cy="224" r="5" fill="#bd452d"/>
     <text x="452" y="158" text-anchor="middle" font-size="11" fill="#272c29">2.45×</text>
     <text x="672" y="207" text-anchor="middle" font-size="11" fill="#272c29">2.06×</text>
-    <text x="452" y="304" text-anchor="middle" font-size="10" fill="#525951">1K OBS.</text>
-    <text x="672" y="304" text-anchor="middle" font-size="10" fill="#525951">20K OBS.</text>
+    <text x="452" y="304" text-anchor="middle" font-size="10" fill="#525951">1K observations</text>
+    <text x="672" y="304" text-anchor="middle" font-size="10" fill="#525951">20K observations</text>
     <text x="414" y="170" text-anchor="end" font-size="10" fill="#525951">2.5×</text>
     <text x="414" y="282" text-anchor="end" font-size="10" fill="#525951">2.0×</text>
 
-    <text x="34" y="372" font-size="12" fill="#272c29">CLIP EMBEDDINGS + DETECTION + MULTI-FRAME FUSION</text>
+    <text x="34" y="372" font-size="12" fill="#272c29">CLIP embeddings, detection and multi-frame fusion</text>
     <text x="34" y="397" font-size="11" fill="#525951">Semantic identity is retained as observations accumulate over time.</text>
   </g>
 </svg>
